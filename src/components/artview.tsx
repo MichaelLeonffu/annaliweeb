@@ -20,7 +20,7 @@ export default function ArtView() {
   // This method fetches the records from the database.
   useEffect(() => {
       async function getArtworks() {
-          const response = await fetch(`http://localhost:5005/api/artwork/`);
+          const response = await fetch(`/api/artwork/`);
   
           if (!response.ok) {
               const message = `An error occurred: ${response.statusText}`;
