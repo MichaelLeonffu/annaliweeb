@@ -21,6 +21,7 @@ export default function ArtView() {
   useEffect(() => {
       async function getArtworks() {
           const response = await fetch(`/api/artwork/`);
+          // const response = await fetch(`http://localhost:5005/api/artwork/`);
   
           if (!response.ok) {
               const message = `An error occurred: ${response.statusText}`;
@@ -53,7 +54,8 @@ export default function ArtView() {
         <Paper
           elevation={24}
           sx={{
-            backgroundColor: 'primary.light'
+            backgroundColor: 'primary.light',
+            borderRadius: '8px',
           }}
         >
           <Typography
@@ -72,9 +74,8 @@ export default function ArtView() {
   return (
     <div>
 
-      {showTag()}
-
       <Box>
+        {showTag()}
         {/* <ImageList variant="masonry" cols={1} gap={2}> */}
           {artworks.map((artwork) => (
               <Container sx={{my: "1rem"}} key={artwork._id}>

@@ -77,7 +77,11 @@ export default function ArtCard(props) {
   }
 
   return (
-    <Card>
+    <Card
+      sx={{
+        borderRadius: '16px'
+      }}
+    >
       <Modal
         open={moreOpen}
         onClose={handleClose}
