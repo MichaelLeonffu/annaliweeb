@@ -46,19 +46,6 @@ export default function ArtView() {
 //       const newRecords = records.filter((el) => el._id !== id);
 //       setRecords(newRecords);
 //   }
-  
-  // This method will map out the records on the table
-  function artworkList() {
-      return artworks.map((artwork) => {
-          return (
-              <ArtCard
-                  artwork={artwork}
-                //   deleteRecord={() => deleteRecord(record._id)}
-                  key={artwork._id}
-              />
-          );
-      });
-  }
 
   function showTag(){
     if (tag){
@@ -90,10 +77,9 @@ export default function ArtView() {
       <Box>
         {/* <ImageList variant="masonry" cols={1} gap={2}> */}
           {artworks.map((artwork) => (
-              <Container sx={{my: "1rem"}}>
+              <Container sx={{my: "1rem"}} key={artwork._id}>
                 <ArtCard
                       artwork={artwork}
-                      key={artwork._id}
                   />
               </Container>
             

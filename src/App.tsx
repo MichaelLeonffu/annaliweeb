@@ -48,7 +48,7 @@ const App = () => {
       <div className="App">
 
         <AppBar />
-        <Container maxWidth="lg">
+        <Container maxWidth="md">
           <Routes>
             <Route exact path="/" element={<ArtView tag=""/>} />
             <Route path="/:tag" element={<ArtView />} />
