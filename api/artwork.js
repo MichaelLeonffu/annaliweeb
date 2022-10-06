@@ -18,6 +18,7 @@ artworkRoutes.route("/artwork").get(function (req, res) {
  db_connect
    .collection("art")
    .find({})
+   .sort({datetime: -1})
    .toArray(function (err, result) {
      if (err) throw err;
      res.json(result);
