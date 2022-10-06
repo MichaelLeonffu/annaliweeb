@@ -17,11 +17,11 @@ app.use('/api', api);
 const dbo = require("./db/conn");
  
 // For the frontend build
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "build")));
 // For the frontend routing
-// app.get('/*', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.listen(port, () => {
   // perform a database connection when server starts
