@@ -18,10 +18,24 @@ artworkRoutes.route("/artwork").get(function (req, res) {
  db_connect
    .collection("art")
    .find({})
+  //  .project(
+  //     {
+  //       _id: 0
+  //     }
+  //   )
    .sort({datetime: -1})
    .toArray(function (err, result) {
      if (err) throw err;
-     res.json(result);
+
+     // Convert the _id to strings
+
+
+     res.json(result.map((item) => {
+        item._id.guild = item._id.guild.toString();
+        item._id.channel = item._id.channel.toString();
+        item._id.message = item._id.message.toString();
+        return item;
+     }));
    });
 });
  
