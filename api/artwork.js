@@ -23,7 +23,7 @@ artworkRoutes.route("/artwork").get(function (req, res) {
   //       _id: 0
   //     }
   //   )
-   .sort({datetime: -1})
+   .sort({datetime_created: -1})
    .toArray(function (err, result) {
      if (err) throw err;
 

@@ -78,7 +78,7 @@ export default function ArtView() {
         {showTag()}
         {/* <ImageList variant="masonry" cols={1} gap={2}> */}
           {artworks.map((artwork) => (
-              <Container sx={{my: "1rem"}} key={artwork._id}>
+              <Container sx={{my: "1rem", width: "620px"}} key={artwork._id}>
                 <ArtCard
                       artwork={artwork}
                   />

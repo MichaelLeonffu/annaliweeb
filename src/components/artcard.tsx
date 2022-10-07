@@ -130,8 +130,7 @@ export default function ArtCard(props) {
       />
       <CardMedia
         component="img"
-        // height="250"
-        image={props.artwork.url}
+        src={props.artwork.url}
         alt="Cute artwork"
       />
       <CardContent>
