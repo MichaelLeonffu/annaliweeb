@@ -45,11 +45,11 @@ export default function ArtCard(props) {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    // width: 800,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
+    p: 2,
   };
 
   // console.log(props);
@@ -90,13 +90,22 @@ export default function ArtCard(props) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Edit this post in discord!
+            Edit this post in discord! Copy and paste the thing below
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2, fontFamily: 'Monospace'}}>
-            annali art_update {props.artwork._id}
+          <Typography id="modal-modal-description" noWrap='true' sx={{ mt: 2, fontFamily: 'Monospace'}}>
+            annali art_edit {props.artwork._id.guild} {props.artwork._id.channel} {props.artwork._id.message}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2, fontFamily: 'Monospace'}}>
-            annali art_delete {props.artwork._id}
+          <Typography id="modal-modal-description" noWrap='true' sx={{ mt: 2, fontFamily: 'Monospace'}}>
+            REPLACE-THIS-WITH-TAGS
+          </Typography>
+          <Typography id="modal-modal-description" noWrap='true' sx={{ mt: 2, fontFamily: 'Monospace'}}>
+            REPLACE-THIS-WITH-SERIES-NUMBER
+          </Typography>
+          <Typography id="modal-modal-description" noWrap='true' sx={{ mt: 2, fontFamily: 'Monospace'}}>
+            REPLACE-THIS-WITH-TITLE
+          </Typography>
+          <Typography id="modal-modal-description" noWrap='true' sx={{ mt: 2, fontFamily: 'Monospace'}}>
+            REPLACE-THIS-WITH-CAPTION
           </Typography>
         </Box>
       </Modal>
@@ -131,14 +140,14 @@ export default function ArtCard(props) {
           fontWeight='bold'
           sx={{ mt: -1 }}
         >
-          {props.artwork.metadata.title}{" "}
+          {props.artwork.title}{" "}
         </Typography>
         <Typography
           variant="body2"
           color="text.secondary"
           sx={{ mt: 1 }}
         >
-          {props.artwork.metadata.caption}
+          {props.artwork.caption}
         </Typography>
         <Typography
           sx={{ mb: -2, mt: 3 }}
